@@ -10,6 +10,15 @@ class ProductsControllerTest < ActionController::TestCase
     }
   end
 
+  test "should_get_index_with_params" do
+    get :index
+    assert_response :success
+    assert_select '#columns #side a', minimum: 4
+    assert_select '#main .entry', 3
+    assert_select 'dt', 'MyString'
+    assert_select '.list_action', 3
+  end
+
   test "should get index" do
     get :index
     assert_response :success

@@ -17,6 +17,11 @@
     <div style="color: white">
       <%= Time.now %>
     </div>
+    <div style="color: white">
+      <%= if session[:counter] > 5
+            pluralize(session[:counter], 'visit')
+      end%>
+    </div>
     <ul>
       <li><a href="http://www....">Home</a></li>
       <li><a href="http://www..../faq">Questions</a></li>
